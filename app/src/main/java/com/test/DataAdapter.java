@@ -65,9 +65,13 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
 
             tv_name = (TextView)itemView.findViewById(R.id.tv_name);
             imageView = itemView.findViewById(R.id.flickr_image);
-            tv_version = (TextView)itemView.findViewById(R.id.tv_version);
-            tv_api_level = (TextView)itemView.findViewById(R.id.tv_api_level);
 
         }
+    }
+    public void updateView(ArrayList<Items> newItems){
+        items = new ArrayList<>();
+        items.addAll(newItems);
+        notifyDataSetChanged();
+
     }
 }
